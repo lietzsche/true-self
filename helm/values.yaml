@@ -1,0 +1,6 @@
+image:
+  repository: true-self/backend
+  tag: latest
+service:
+  type: ClusterIP
+  port: 80

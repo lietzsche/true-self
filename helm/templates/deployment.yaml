@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: true-self
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: true-self
+  template:
+    metadata:
+      labels:
+        app: true-self
+    spec:
+      containers:
+        - name: backend
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: 8080
